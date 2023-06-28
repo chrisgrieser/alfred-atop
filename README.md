@@ -1,18 +1,29 @@
-# {{workflow-name}}
-![](https://img.shields.io/github/downloads/chrisgrieser/{{workflow-id}}/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/{{workflow-id}}?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](./Changelog.md)
+<!-- LTeX: enabled=false -->
+# atop
+<!-- LTeX: enabled=true -->
+![](https://img.shields.io/github/downloads/chrisgrieser/alfred-atop/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/alfred-atop?label=Latest%20Release&style=plastic) [![](https://img.shields.io/badge/changelog-click%20here-FFE800?style=plastic)](./Changelog.md)
 
-{{workflow-description}}
+System Monitoring and Process Management via Alfred. 
+
+<img src="./assets/showcase.gif" alt="alt text" width="50%">
 
 ## Features
-- 
+- Process Management: CPU & Memory, kill processes, restart apps
+- Bluetooth Devices: Battery Information (if available), Connection
+- Network Connections
+- Removable Volumes
+- Uptime & Reboots
+- Speedtest
+- Live refreshing
 
 ## Installation
-[➡️ Download the latest release.](https://github.com/chrisgrieser/{{workflow-id}}/releases/latest)
+[➡️ Download the latest release.](https://github.com/chrisgrieser/alfred-atop/releases/latest)
 
 When admitted to the Alfred Gallery, the workflow auto-updates via Alfred's workflow-update mechanism.
 
 ## Usage
-- 
+- Use the keyword `atop`.
+- The settings and shortcuts can be seen in the workflow configuration.
 
 ## Credits
 <!-- vale Google.FirstPerson = NO -->

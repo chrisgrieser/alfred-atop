@@ -8,7 +8,7 @@ on:
 
 env:
   # Change this to match your workflow name, replacing " " with "-"
-  WORKFLOW_NAME: "{{workflow-id}}"
+  WORKFLOW_NAME: "alfred-atop"
 
 jobs:
   build:
