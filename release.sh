@@ -27,8 +27,8 @@ fi
 rm -fv ./*.alfredworkflow # remove workflow file from previous release
 
 # zip
-workflowName=$(plutil -extract name xml1 -o - info.plist | sed -n 4p | cut -d">" -f2 | cut -d"<" -f1 | tr " " "-")
-zip --quiet --recurse-paths "$workflowName.alfredworkflow" . \
+workflowId=$(basename "$PWD")
+zip --quiet --recurse-paths "$workflowId.alfredworkflow" . \
 	--exclude ".git*" "info-original.plist" "prefs.plist" "*.alfredworkflow"
 
 # restore original
