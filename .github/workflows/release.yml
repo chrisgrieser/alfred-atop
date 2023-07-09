@@ -7,20 +7,15 @@ on:
       - "*"
 
 env:
-  # Change this to match your workflow name, replacing " " with "-"
-  WORKFLOW_NAME: "alfred-atop"
+  WORKFLOW_NAME: ${{ github.event.repository.name }}
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Log Version
-        id: log-version
-        run: |
-          echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
       - name: Create Release
         id: create_release
@@ -34,6 +29,11 @@ jobs:
           draft: false
           prerelease: false
 
+      - name: Build .alfredworkflow
+        run: |
+          name="${{ env.WORKFLOW_NAME }}"
+          zip --quiet --recurse-paths "$name.alfredworkflow" . --exclude ".git*"
+
       - name: Upload .alfredworkflow file
         id: upload-alfredworkflow
         uses: actions/upload-release-asset@v1
@@ -44,4 +44,3 @@ jobs:
           asset_path: ./${{ env.WORKFLOW_NAME }}.alfredworkflow
           asset_name: ${{ env.WORKFLOW_NAME }}.alfredworkflow
           asset_content_type: application/zip
-
