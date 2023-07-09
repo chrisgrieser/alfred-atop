@@ -6,7 +6,7 @@ on: # yamllint disable-line rule:truthy
       - "*"
 
 env:
-  WORKFLOW_FILE: ${{ github.event.repository.name }}
+  WORKFLOW_NAME: ${{ github.event.repository.name }}
   VERSION: ${{ github.ref }} # = the tag used to trigger this action
 
 jobs:
