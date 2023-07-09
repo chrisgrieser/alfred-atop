@@ -1,13 +1,13 @@
-name: Release Alfred Workflow
+name: Build & Release Alfred Workflow
 
-# yamllint disable-line rule:truthy
-on:
+on: # yamllint disable-line rule:truthy
   push:
     tags:
       - "*"
 
 env:
-  WORKFLOW_NAME: ${{ github.event.repository.name }}
+  WORKFLOW_FILE: ${{ github.event.repository.name }}
+  VERSION: ${{ github.ref }} # = the tag used to trigger this action
 
 jobs:
   build:
@@ -22,19 +22,19 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ github.ref }}
+          VERSION: ${{ env.VERSION }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          tag_name: ${{ env.VERSION }}
+          release_name: ${{ env.VERSION }}
           draft: false
           prerelease: false
 
       - name: Build .alfredworkflow
         run: |
-          name="${{ env.WORKFLOW_NAME }}"
-          zip --quiet --recurse-paths "$name.alfredworkflow" . --exclude ".git*"
+          zip --quiet --recurse-paths "${{ env.WORKFLOW_NAME }}.alfredworkflow" . \
+            --exclude ".git*" "Makefile" "release.sh" "README.md" "assets/*" ".DS_Store"
 
-      - name: Upload .alfredworkflow file
+      - name: Upload .alfredworkflow as Release Asset
         id: upload-alfredworkflow
         uses: actions/upload-release-asset@v1
         env:
