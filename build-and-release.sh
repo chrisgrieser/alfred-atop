@@ -1,5 +1,6 @@
 #!/bin/zsh
 # BUILD AND RELEASE
+#───────────────────────────────────────────────────────────────────────────────
 
 # goto git root
 cd "$(git rev-parse --show-toplevel)" || return 1
@@ -9,7 +10,7 @@ currentVersion=$(plutil -extract version xml1 -o - info.plist | sed -n 's/.*<str
 echo "current version: $currentVersion"
 echo -n "   next version: "
 read -r nextVersion
-echo
+echo "────────────────────────"
 
 # update version number in *repo* info.plist
 plutil -replace version -string "$nextVersion" info.plist
@@ -19,6 +20,8 @@ localInfoPlist="$DOTFILE_FOLDER/Alfred.alfredpreferences/workflows/$(basename "$
 if [[ -f "$localInfoPlist" ]]; then
 	plutil -replace version -string "$nextVersion" "$localInfoPlist"
 fi
+
+#───────────────────────────────────────────────────────────────────────────────
 
 # git operations
 git add -A
