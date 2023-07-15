@@ -24,8 +24,27 @@ System Monitoring and Process Management via Alfred.
 When admitted to the Alfred Gallery, the workflow auto-updates via Alfred's workflow-update mechanism.
 
 ## Usage
-- Use the keyword `atop`.
-- The settings and shortcuts can be seen in the workflow configuration.
+List all available tools via `atop` and select one. 
+
+Alternatively, you can also directly access the more frequently used tools via a configurable keyword, e.g. by default `top` to show active processes.
+
+### Process Management
+<img width="1106" alt="showcase processes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/70304f1f-2856-4329-8d69-65c179bb3378">
+
+<kbd>↩︎</kbd>: Kill the process.
+<kbd>↩︎</kbd><kbd>⌘</kbd>: Force kill the process.
+<kbd>↩︎</kbd><kbd>⌃</kbd>: Kill all processes with the same name.
+<kbd>↩︎</kbd><kbd>⇧</kbd>: If the process belongs to a regular app, restart the app.
+<kbd>↩︎</kbd><kbd>⌥</kbd>: Copy the PID.
+
+### Bluetooth Devices
+<kbd>↩︎</kbd>: If `blueutil` is installed, toggle the connection state. Otherwise, open the bluetooth preferences.
+<kbd>↩︎</kbd><kbd>⌥</kbd>: Copy the device address.
+
+### Ejectable Volumes
+<kbd>↩︎</kbd>: Open the Volume in Finder.
+<kbd>↩︎</kbd><kbd>⌘</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).
+<kbd>↩︎</kbd><kbd>⌃</kbd>: Eject the Volume.
 
 ## Credits
 <!-- vale Google.FirstPerson = NO -->
