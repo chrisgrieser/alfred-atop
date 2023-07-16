@@ -27,7 +27,7 @@ List all available tools via `atop` and select one. Alternatively, you can also 
 ### Process Management
 <img width="70%" alt="showcase processes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/70304f1f-2856-4329-8d69-65c179bb3378">
 
-Display processes directly via `top`.
+Display processes directly via `top`.  
 <kbd>↩︎</kbd>: Kill the process.
 <kbd>⌘</kbd><kbd>↩︎</kbd>: Force kill the process.
 <kbd>⌃</kbd><kbd>↩︎</kbd>: Kill all processes with the same name.
