@@ -7,8 +7,6 @@ System Monitoring and Process Management via Alfred.
 
 <img src="./assets/showcase overview.png" alt="atop overview showcase" width="50%">
 
-<img src="./assets/showcase processes.png" alt="showcase processes" width="50%">
-
 ## Features
 - Process Management: CPU & Memory, kill processes, restart apps
 - Bluetooth Devices: Battery Information (if available), Connection
@@ -21,30 +19,34 @@ System Monitoring and Process Management via Alfred.
 ## Installation
 [➡️ Download the latest release.](https://github.com/chrisgrieser/alfred-atop/releases/latest)
 
-When admitted to the Alfred Gallery, the workflow auto-updates via Alfred's workflow-update mechanism.
-
 ## Usage
 List all available tools via `atop` and select one. 
 
 Alternatively, you can also directly access the more frequently used tools via a configurable keyword, e.g. by default `top` to show active processes.
 
+<img width="1106" alt="showcase overview" src="https://github.com/alfredapp/gallery-edits/assets/73286100/0ee2329e-45f8-4364-af47-70c06690932f">
+
 ### Process Management
 <img width="1106" alt="showcase processes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/70304f1f-2856-4329-8d69-65c179bb3378">
 
 <kbd>↩︎</kbd>: Kill the process.
-<kbd>↩︎</kbd><kbd>⌘</kbd>: Force kill the process.
-<kbd>↩︎</kbd><kbd>⌃</kbd>: Kill all processes with the same name.
-<kbd>↩︎</kbd><kbd>⇧</kbd>: If the process belongs to a regular app, restart the app.
-<kbd>↩︎</kbd><kbd>⌥</kbd>: Copy the PID.
+<kbd>⌘</kbd><kbd>↩︎</kbd>: Force kill the process.
+<kbd>⌃</kbd><kbd>↩︎</kbd>: Kill all processes with the same name.
+<kbd>⇧</kbd><kbd>↩︎</kbd>: If the process belongs to a regular app, restart the app.
+<kbd>⌥</kbd><kbd>↩︎</kbd>: Copy the PID.
 
 ### Bluetooth Devices
 <kbd>↩︎</kbd>: If `blueutil` is installed, toggle the connection state. Otherwise, open the bluetooth preferences.
-<kbd>↩︎</kbd><kbd>⌥</kbd>: Copy the device address.
+<kbd>⌥</kbd><kbd>↩︎</kbd>: Copy the device address.
+
+<img width="1106" alt="Pasted image 2023-07-16 at 11 53 31@2x" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
 ### Ejectable Volumes
+<img width="1106" alt="Pasted image 2023-07-16 at 11 56 06@2x" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
+
 <kbd>↩︎</kbd>: Open the Volume in Finder.
-<kbd>↩︎</kbd><kbd>⌘</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).
-<kbd>↩︎</kbd><kbd>⌃</kbd>: Eject the Volume.
+<kbd>⌘</kbd><kbd>↩︎</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).
+<kbd>⌃</kbd><kbd>↩︎</kbd>: Eject the Volume.
 
 ## Credits
 <!-- vale Google.FirstPerson = NO -->
