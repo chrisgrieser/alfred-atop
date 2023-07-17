@@ -14,7 +14,7 @@ System Monitoring and Process Management via Alfred.
 - Removable Volumes
 - Uptime & Reboots
 - Speedtest
-- Live refreshing of all
+- Live refreshing
 
 ## Installation
 [➡️ Download the latest release.](https://github.com/chrisgrieser/alfred-atop/releases/latest)
@@ -28,26 +28,26 @@ List all available tools via `atop` and select one. Alternatively, you can also 
 <img width="60%" alt="showcase processes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/70304f1f-2856-4329-8d69-65c179bb3378">
 
 Display processes directly via `top`.  
-<kbd>↩︎</kbd>: Kill the process.  
-<kbd>⌘</kbd><kbd>↩︎</kbd>: Force kill the process.  
-<kbd>⌃</kbd><kbd>↩︎</kbd>: Kill all processes with the same name.  
-<kbd>⇧</kbd><kbd>↩︎</kbd>: If the process belongs to a regular app, restart the app.  
-<kbd>⌥</kbd><kbd>↩︎</kbd>: Copy the PID.  
+<kbd>⏎</kbd>: Kill the process.  
+<kbd>⌘</kbd><kbd>⏎</kbd>: Force kill the process.  
+<kbd>⌃</kbd><kbd>⏎</kbd>: Kill all processes with the same name.  
+<kbd>⇧</kbd><kbd>⏎</kbd>: If the process belongs to a regular app, restart the app.  
+<kbd>⌥</kbd><kbd>⏎</kbd>: Copy the Process Identifier (PID). 
 
 ### Bluetooth Devices
-<img width="60%" alt="Pasted image 2023-07-16 at 11 53 31@2x" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
+<img width="60%" alt="showcase Bluetooth Devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
-Display processes directly via `blue`.  
-<kbd>↩︎</kbd>: If `blueutil` is installed, toggle the connection state. Otherwise, open the bluetooth preferences.  
-<kbd>⌥</kbd><kbd>↩︎</kbd>: Copy the device address.  
+Display Bluetooth devices directly via `blue`.  
+<kbd>⏎</kbd>: If `blueutil` is installed, toggle the connection state. Otherwise, open the Bluetooth preferences.  
+<kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address.  
 
 ### Ejectable Volumes
-<img width="60%" alt="Pasted image 2023-07-16 at 11 56 06@2x" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
+<img width="60%" alt="showcase  Ejectable Volumes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
 
-Display processes directly via `vol`.  
-<kbd>↩︎</kbd>: Open the Volume in Finder.  
-<kbd>⌘</kbd><kbd>↩︎</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).  
-<kbd>⌃</kbd><kbd>↩︎</kbd>: Eject the Volume.  
+Display ejectable Volumes directly via `vol`.  
+<kbd>⏎</kbd>: Open the Volume in Finder.  
+<kbd>⌘</kbd><kbd>⏎</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).  
+<kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.  
 
 ## Credits
 <!-- vale Google.FirstPerson = NO -->
