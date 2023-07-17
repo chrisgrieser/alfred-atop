@@ -37,14 +37,14 @@ Display processes directly via `top`.
 ### Bluetooth Devices
 <img width="60%" alt="showcase Bluetooth Devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
-Display Bluetooth devices directly via `blue`.  
+Display paired Bluetooth devices directly via `blue`.  
 <kbd>⏎</kbd>: If `blueutil` is installed, toggle the connection state. Otherwise, open the Bluetooth preferences.  
 <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address.  
 
-### Ejectable Volumes
+### Removable Volumes
 <img width="60%" alt="showcase  Ejectable Volumes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
 
-Display ejectable Volumes directly via `vol`.  
+Display mounted volumes directly via `vol`.  
 <kbd>⏎</kbd>: Open the Volume in Finder.  
 <kbd>⌘</kbd><kbd>⏎</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).  
 <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.  
