@@ -14,7 +14,6 @@ const excludedDevices = ($.getenv("excluded_devices") || "").split(",").map((t) 
 /** @type {AlfredRun} */
 // rome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
-
 	let deviceArr = [];
 	const allDevices = JSON.parse(app.doShellScript("system_profiler -json SPBluetoothDataType"))
 		.SPBluetoothDataType[0];
@@ -33,6 +32,20 @@ function run() {
 			const properties = device[name];
 			properties.device_name = name;
 			properties.connected = false;
+			deviceArr.push(properties);
+		});
+	}
+
+	// INFO some macOS versions use a different property for that (see issue #2)
+	if (allDevices.device_title) {
+		const deviceNames = Object.keys(allDevices.device_title);
+		deviceNames.forEach((/** @type {string} */ name) => {
+			const properties = allDevices.device_title[name];
+			// make keys consistent with the other versions of the output
+			properties.device_minorType = properties.device_minorClassOfDevice_string;
+			properties.device_name = name;
+			properties.connected = properties.device_isconnected === "attrib_Yes";
+			properties.device_address = properties.device_addr.replaceAll("_", ":");
 			deviceArr.push(properties);
 		});
 	}
@@ -68,7 +81,14 @@ function run() {
 
 		// icon
 		let category = "";
-		const typeIcons = { Keyboard: "⌨️", Mouse: "🖱️", AppleTrackpad: "🖲️", Gamepad: "🎮", Headphones: "🎧" };
+		const typeIcons = {
+			Keyboard: "⌨️",
+			Mouse: "🖱️",
+			AppleTrackpad: "🖲️",
+			Gamepad: "🎮",
+			Headphones: "🎧",
+			Headset: "🎧",
+		};
 		if (type) category = typeIcons[type];
 		else if (name.toLowerCase().includes("phone")) category = "📱";
 

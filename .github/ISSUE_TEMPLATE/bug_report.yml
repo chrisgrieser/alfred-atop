@@ -25,6 +25,26 @@ body:
         1. Go to '...'
         2. Click on '...'
         3. Scroll down to '...'
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS Version
+      description: >
+        You can see your macOS version by clicking the Apple Symbol at the top 
+        left of your menubar and select `About This Mac`.
+      placeholder: "e.g., macOS 13.4.1"
+    validations:
+      required: true
+  - type: input
+    id: device-model
+    attributes:
+      label: Device Model
+      description: >
+        You can see your device model by clicking the Apple Symbol at the top 
+        left of your menubar and select `About This Mac`.
+      placeholder: "e.g., iMac 24-inch, M1, 2021"
+    validations:
+      required: true
   - type: textarea
     id: debugging-log
     attributes:
