@@ -1269,7 +1269,7 @@ JSON.stringify({ 'items': volume_array });
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>✅ DNS server changed</string>
+				<string>✅ DNS server: {var:server_name}</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
