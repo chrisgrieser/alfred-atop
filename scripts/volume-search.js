@@ -21,10 +21,7 @@ function run() {
 				return value.replaceAll("unavailable", "…").replaceAll("Gi", "Gb").replaceAll("Ti", "Tb");
 			});
 
-			const total = info[1];
-			const used = info[2];
-			const available = info[3];
-			const share = info[4];
+			const [,total, used, available, share] = info;
 			const path = info.slice(8).join(" ");
 			const name = path.replace("/Volumes/", "");
 

@@ -1342,7 +1342,7 @@ Display mounted volumes directly via `vol`.
 		<key>10CA15B1-4D0A-4969-A5CB-710B56613A61</key>
 		<dict>
 			<key>xpos</key>
-			<real>170</real>
+			<real>175</real>
 			<key>ypos</key>
 			<real>560</real>
 		</dict>
