@@ -5,7 +5,7 @@
 
 System Monitoring and Process Management via Alfred. 
 
-<img src="./assets/showcase overview.png" alt="atop overview showcase" width="70%">
+<img alt="atop overview showcase" width="70%" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/688059a7-7878-4928-9164-ee6f8eb43381">
 
 ## Features
 - Process Management: CPU & Memory, kill processes, restart apps
@@ -14,6 +14,7 @@ System Monitoring and Process Management via Alfred.
 - Removable Volumes
 - Uptime & Reboots
 - Speedtest
+- DNS Switching
 - Live refreshing
 
 ## Installation
@@ -48,6 +49,10 @@ Display mounted volumes directly via `vol`.
 <kbd>⏎</kbd>: Open the Volume in Finder.  
 <kbd>⌘</kbd><kbd>⏎</kbd>: Browse the Volume in the Terminal, [using the Terminal app you have configured in your Alfred preferences](https://www.alfredapp.com/help/features/terminal/).  
 <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.  
+
+### DNS Switching
+<img width="60%" alt="showcase DNS Switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
+
 
 ## Credits
 <!-- vale Google.FirstPerson = NO -->
