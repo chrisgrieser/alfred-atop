@@ -24,9 +24,14 @@ function run() {
 		},
 	];
 
+	// get current DNS
+	const serviceName = app
+		.doShellScript("networksetup -listallnetworkservices")
+		.split("\r")[1] // get second line, since first is a header
+		.replace("*", ""); // asterisk is used to mark disabled services
 	const currentDns = app
-		.doShellScript("networksetup -listallnetworkservices | tail -1 | xargs networksetup -getdnsservers")
-		.split("\r")[0];
+		.doShellScript(`networksetup -getdnsservers "${serviceName}"`)
+		.split("\r")[0]
 	if (currentDns === "8.8.8.8") selectableDns[0].title = "✅ Google";
 	else if (currentDns === "1.1.1.1") selectableDns[1].title = "✅ Cloudflare";
 
