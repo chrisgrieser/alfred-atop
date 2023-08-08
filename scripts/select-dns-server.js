@@ -8,7 +8,6 @@ app.includeStandardAdditions = true;
 /** @type {AlfredRun} */
 // rome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
-
 	/** @type AlfredItem[] */
 	const selectableDns = [
 		{
@@ -25,8 +24,9 @@ function run() {
 		},
 	];
 
-	// needs to get 2nd line, since first is default
-	const currentDns = app.doShellScript("networksetup -listallnetworkservices").split("\r")[1];
+	const currentDns = app
+		.doShellScript("networksetup -listallnetworkservices | tail -1 | xargs networksetup -getdnsservers")
+		.split("\r")[0];
 	if (currentDns === "8.8.8.8") selectableDns[0].title = "✅ Google";
 	else if (currentDns === "1.1.1.1") selectableDns[1].title = "✅ Cloudflare";
 
