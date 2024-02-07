@@ -2,12 +2,13 @@
 ObjC.import("stdlib");
 const app = Application.currentApplication();
 app.includeStandardAdditions = true;
-
 //──────────────────────────────────────────────────────────────────────────────
 
 // common apps where process name and app name are different
 const processAppName = {
+	// biome-ignore lint/style/useNamingConvention: usedAsDict
 	Alfred: "Alfred 5",
+	// biome-ignore lint/style/useNamingConvention: usedAsDict
 	CleanShot: "CleanShot X",
 	neovide: "Neovide",
 	espanso: "Espanso",
@@ -15,6 +16,7 @@ const processAppName = {
 	"wezterm-gui": "WezTerm",
 	bird: "iCloud Sync",
 	"Steam Helper": "Steam",
+	// biome-ignore lint/style/useNamingConvention: usedAsDict
 	steam_osx: "Steam",
 	"Brave Browser Helper": "Brave Browser",
 	"Brave Browser Helper (Renderer)": "Brave Browser",
@@ -32,20 +34,21 @@ const processAppName = {
 
 // common apps not located in /Applications/
 const appFilePaths = {
+	// biome-ignore lint/style/useNamingConvention: usedAsDict
 	Finder: "/System/Library/CoreServices/Finder.app",
 	"Alfred Preferences": "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app",
 };
 
-const parentIcon = "↖";
+const hasParentIcon = "↖";
 
 //──────────────────────────────────────────────────────────────────────────────
 
-let rerunSecs = parseFloat($.getenv("rerun_s_processes")) || 2.5;
+let rerunSecs = Number.parseFloat($.getenv("rerun_s_processes")) || 2.5;
 if (rerunSecs < 0.1) rerunSecs = 0.1;
 else if (rerunSecs > 5) rerunSecs = 5;
 
-const cpuThresholdPercent = parseFloat($.getenv("cpu_threshold_percent")) || 0.5;
-const memoryThresholdMb = parseFloat($.getenv("memory_threshold_mb")) || 10;
+const cpuThresholdPercent = Number.parseFloat($.getenv("cpu_threshold_percent")) || 0.5;
+const memoryThresholdMb = Number.parseFloat($.getenv("memory_threshold_mb")) || 10;
 const sort = $.getenv("sort_key") === "Memory" ? "m" : "r";
 
 const apps = app
@@ -80,15 +83,15 @@ function run() {
 				parentProcs[ppid] = app.doShellScript(`ps -p ${ppid} -co 'command=' || true`);
 				parentName = parentProcs[ppid];
 			}
-			const parentObvious = processName.startsWith(parentName) && processName !== parentName;
-			if (parentName === "launchd" || parentObvious) parentName = "";
-			if (parentName) parentName = `${parentIcon} ${parentName}`;
+			const parentIsObvious = processName.startsWith(parentName) && processName !== parentName;
+			if (parentName === "launchd" || parentIsObvious) parentName = "";
+			if (parentName) parentName = `${hasParentIcon} ${parentName}`;
 
 			// Memory, CPU & root
-			let memory = (parseInt(info[3]) / 1024).toFixed(0).toString(); // real memory
-			memory = parseInt(memory) > memoryThresholdMb ? memory + "Mb" : "";
+			let memory = (Number.parseInt(info[3]) / 1024).toFixed(0).toString(); // real memory
+			memory = Number.parseInt(memory) > memoryThresholdMb ? memory + "Mb" : "";
 			let cpu = info[2];
-			cpu = parseFloat(cpu) > cpuThresholdPercent ? cpu + "%" : "";
+			cpu = Number.parseFloat(cpu) > cpuThresholdPercent ? cpu + "%" : "";
 			const isRootUser = info[4] === "root" ? " ⭕" : "";
 
 			// display & icon
