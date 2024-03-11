@@ -32,30 +32,30 @@ directly access the more frequently used tools via a configurable keyword.
 
 Display processes directly via `top`. Append "parent" to the query to display
 only processes that have child processes.
-- <kbd>⏎</kbd>: Kill the process. 
-- <kbd>⌘</kbd><kbd>⏎</kbd>: Force kill the process. 
-- <kbd>⌃</kbd><kbd>⏎</kbd>: Kill all processes with the same name. 
+- <kbd>⏎</kbd>: Kill the process.
+- <kbd>⌘</kbd><kbd>⏎</kbd>: Force kill the process.
+- <kbd>⌃</kbd><kbd>⏎</kbd>: Kill all processes with the same name.
 - <kbd>⇧</kbd><kbd>⏎</kbd>: If the process belongs to a regular app, restart the
-  app. 
+  app.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the Process Identifier (PID).
 
 ### Bluetooth Devices
 <img width="60%" alt="showcase Bluetooth Devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
-Display paired Bluetooth devices directly via `blue`. 
+Display paired Bluetooth devices directly via `blue`.
 - <kbd>⏎</kbd>: If `blueutil` is installed, toggle the connection state.
-  Otherwise, open the Bluetooth preferences. 
-- <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address. 
+  Otherwise, open the Bluetooth preferences.
+- <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address.
 
 ### Removable Volumes
 <img width="60%" alt="showcase  Ejectable Volumes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
 
-Display mounted volumes directly via `vol`. 
-- <kbd>⏎</kbd>: Open the Volume in Finder. 
+Display mounted volumes directly via `vol`.
+- <kbd>⏎</kbd>: Open the Volume in Finder.
 - <kbd>⌘</kbd><kbd>⏎</kbd>: Browse the Volume in the Terminal, [using the
   Terminal app you have configured in your Alfred
   preferences](https://www.alfredapp.com/help/features/terminal/).  
-- <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume. 
+- <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.
 
 ### DNS Switching
 <img width="60%" alt="showcase DNS Switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
@@ -67,7 +67,7 @@ digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
-__Profiles__  
+**Profiles**  
 - [reddit](https://www.reddit.com/user/pseudometapseudo)
 - [Discord](https://discordapp.com/users/462774483044794368/)
 - [Academic Website](https://chris-grieser.de/)
