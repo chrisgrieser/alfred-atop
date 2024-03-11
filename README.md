@@ -39,6 +39,11 @@ only processes that have child processes.
   app.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the Process Identifier (PID).
 
+**Meaning of the icons**
+- `⭕` indicates that the process is owned by root.
+- `n⇣` means that the process is a parent of `n` child processes.
+- `↖ foobar` indicates that the process is a child of `foobar`.
+
 ### Bluetooth Devices
 <img width="60%" alt="showcase Bluetooth Devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
