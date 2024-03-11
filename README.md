@@ -4,19 +4,21 @@
 ![Download count](https://img.shields.io/github/downloads/chrisgrieser/alfred-atop/total?label=Total%20Downloads&style=plastic)
 ![Latest release](https://img.shields.io/github/v/release/chrisgrieser/alfred-atop?label=Latest%20Release&style=plastic)
 
-System Monitoring and Process Management via Alfred.
+System monitoring and process management via Alfred.
 
 <img alt="atop overview showcase" width="70%" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/688059a7-7878-4928-9164-ee6f8eb43381">
 
 ## Features
-- Process Management: CPU & Memory, kill processes, restart apps
-- Bluetooth Devices: Battery Information (if available), Connection
-- Network Connections
-- Removable Volumes
-- Uptime & Reboots
-- Speed-test
-- DNS Switching
-- Live refreshing
+- Process management: CPU usage, memory usage, parent processes, and child processes.
+<!-- LTeX: enabled=false -->
+- Bluetooth devices: connection status and battery information (if available)
+<!-- LTeX: enabled=true -->
+- Network connections
+- Removable volumes
+- Uptime & reboots
+- Speed-test of internet connection
+- DNS switching
+- All features are live refreshing.
 
 ## Installation
 [➡️ Download the latest release.](https://github.com/chrisgrieser/alfred-atop/releases/latest)
@@ -40,12 +42,12 @@ only processes that have child processes.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the Process Identifier (PID).
 
 **Meaning of the icons**
-- `⭕` indicates that the process is owned by root.
-- `n⇣` means that the process is a parent of `n` child processes.
-- `↖ foobar` indicates that the process is a child of `foobar`.
+- `⭕`: process is owned by root.
+- `n⇣`: process is a parent of `n` child processes.
+- `↖ foobar`: process is a child of `foobar`.
 
 ### Bluetooth Devices
-<img width="60%" alt="showcase Bluetooth Devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
+<img width="60%" alt="showcase bluetooth devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
 Display paired Bluetooth devices directly via `blue`.
 - <kbd>⏎</kbd>: If `blueutil` is installed, toggle the connection state.
@@ -53,7 +55,7 @@ Display paired Bluetooth devices directly via `blue`.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address.
 
 ### Removable Volumes
-<img width="60%" alt="showcase  Ejectable Volumes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
+<img width="60%" alt="showcase rjectable volumes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
 
 Display mounted volumes directly via `vol`.
 - <kbd>⏎</kbd>: Open the Volume in Finder.
@@ -63,20 +65,17 @@ Display mounted volumes directly via `vol`.
 - <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.
 
 ### DNS Switching
-<img width="60%" alt="showcase DNS Switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
+<img width="60%" alt="showcase DNS switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
 
-## Credits
 <!-- vale Google.FirstPerson = NO -->
+## About the developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
-**Profiles**  
-- [reddit](https://www.reddit.com/user/pseudometapseudo)
-- [Discord](https://discordapp.com/users/462774483044794368/)
 - [Academic Website](https://chris-grieser.de/)
-- [Twitter](https://twitter.com/pseudo_meta)
+- [Mastodon](https://pkm.social/@pseudometa)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
