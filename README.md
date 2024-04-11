@@ -10,9 +10,7 @@ System monitoring and process management via Alfred.
 
 ## Features
 - Process management: CPU usage, memory usage, parent processes, and child processes.
-<!-- LTeX: enabled=false -->
 - Bluetooth devices: connection status and battery information (if available)
-<!-- LTeX: enabled=true -->
 - Network connections
 - Removable volumes
 - Uptime & reboots
