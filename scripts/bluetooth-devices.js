@@ -57,6 +57,7 @@ function run() {
 
 	// INFO `ioreg` only includes Apple keyboards, mice, and trackpads, but does
 	// have battery data for them which is missing from the `system_profiler` output.
+	/** @type {Record<string, any>} */
 	const applePeriphery = {};
 	let applePeriData = app.doShellScript(
 		"ioreg -rak BatteryPercent | sed 's/data>/string>/' | plutil -convert json - -o - || true",
@@ -82,13 +83,14 @@ function run() {
 		const batteryLow = batteryLevel < 20 ? "⚠️" : "";
 		const battery = batteryLevel > -1 ? `${batteryLow}${batteryLevel}%` : "";
 		const connected = device.connected ? "🟢 " : "🔴 ";
-		const distance = device.device_rssi ? ` rssi: ${device.device_rssi}` : "";
+		const rssi = device.device_rssi ? ` rssi: ${device.device_rssi}` : "";
 		const name = device.device_name;
 		if (excludedDevices.includes(name)) return {};
 		const type = device.device_minorType;
 
 		// icon
 		let category = "";
+		/** @type {Record<string, string>} */
 		const typeIcons = {
 			keyboard: "⌨️",
 			mouse: "🖱️",
@@ -102,7 +104,7 @@ function run() {
 
 		return {
 			title: `${name} ${category}`,
-			subtitle: connected + battery + distance,
+			subtitle: connected + battery + rssi,
 			arg: device.device_address,
 		};
 	});
