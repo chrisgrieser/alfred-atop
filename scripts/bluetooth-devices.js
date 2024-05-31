@@ -100,7 +100,7 @@ function run() {
 			headset: "🎧",
 		};
 		if (type) category = typeIcons[type.toLowerCase()];
-		else if (name.toLowerCase().includes("phone")) category = "📱";
+		else if (name.match(/tablet|ipad|phone/i)) category = "📱";
 
 		return {
 			title: `${name} ${category}`,
