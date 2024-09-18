@@ -7,10 +7,7 @@ app.includeStandardAdditions = true;
 /** @type {AlfredRun} */
 // biome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
-	let rerunSecs = Number.parseFloat($.getenv("rerun_s_network")) || 2.5;
-	if (rerunSecs < 0.1) rerunSecs = 0.1;
-	else if (rerunSecs > 5) rerunSecs = 5;
-
+	const rerunSecs = Number.parseFloat($.getenv("rerun_s_network"));
 	const installedApps = app
 		.doShellScript("ls /Applications/")
 		.split("\r")

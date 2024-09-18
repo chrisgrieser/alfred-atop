@@ -23,10 +23,7 @@ function camelCaseMatch(str) {
 /** @type {AlfredRun} */
 // biome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
-	let rerunSecs = Number.parseFloat($.getenv("rerun_s_processes")) || 2.5;
-	if (rerunSecs < 0.1) rerunSecs = 0.1;
-	else if (rerunSecs > 5) rerunSecs = 5;
-
+	const rerunSecs = Number.parseFloat($.getenv("rerun_s_processes"));
 	const cpuThresholdPercent = Number.parseFloat($.getenv("cpu_threshold_percent")) || 0.5;
 	const memoryThresholdMb = Number.parseFloat($.getenv("memory_threshold_mb")) || 10;
 	const sort = $.getenv("sort_key") === "Memory" ? "m" : "r";
