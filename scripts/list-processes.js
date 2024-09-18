@@ -5,6 +5,7 @@ app.includeStandardAdditions = true;
 //──────────────────────────────────────────────────────────────────────────────
 
 // common apps where process name and app name are different
+/** @type {Record<string, string>} */
 const processAppName = {
 	// biome-ignore lint/style/useNamingConvention: usedAsDict
 	Alfred: "Alfred 5",
@@ -33,6 +34,7 @@ const processAppName = {
 };
 
 // common apps not located in /Applications/
+/** @type {Record<string, string>} */
 const appFilePaths = {
 	// biome-ignore lint/style/useNamingConvention: usedAsDict
 	Finder: "/System/Library/CoreServices/Finder.app",
@@ -42,18 +44,6 @@ const appFilePaths = {
 const separator = "    ";
 //──────────────────────────────────────────────────────────────────────────────
 
-let rerunSecs = Number.parseFloat($.getenv("rerun_s_processes")) || 2.5;
-if (rerunSecs < 0.1) rerunSecs = 0.1;
-else if (rerunSecs > 5) rerunSecs = 5;
-
-const cpuThresholdPercent = Number.parseFloat($.getenv("cpu_threshold_percent")) || 0.5;
-const memoryThresholdMb = Number.parseFloat($.getenv("memory_threshold_mb")) || 10;
-const sort = $.getenv("sort_key") === "Memory" ? "m" : "r";
-
-const installedApps = app
-	.doShellScript("ls /Applications/")
-	.split("\r")
-	.filter((line) => line.endsWith(".app"));
 
 /** @param {string} str */
 function camelCaseMatch(str) {
@@ -67,30 +57,44 @@ function camelCaseMatch(str) {
 /** @type {AlfredRun} */
 // biome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
-	// PERF store parent process names in dict, to reduce process name searches
+	let rerunSecs = Number.parseFloat($.getenv("rerun_s_processes")) || 2.5;
+	if (rerunSecs < 0.1) rerunSecs = 0.1;
+	else if (rerunSecs > 5) rerunSecs = 5;
+
+	const cpuThresholdPercent = Number.parseFloat($.getenv("cpu_threshold_percent")) || 0.5;
+	const memoryThresholdMb = Number.parseFloat($.getenv("memory_threshold_mb")) || 10;
+	const sort = $.getenv("sort_key") === "Memory" ? "m" : "r";
+
+	/** @type {Record<string, { name: string; childrenCount: number }> } */
 	const parentProcs = {};
 
+	const installedApps = app
+		.doShellScript("ls /Applications/")
+		.split("\r")
+		.filter((line) => line.endsWith(".app"));
+
+	/** @type {AlfredItem[]} */
 	const processes = app
 		// command should come last, so it is not truncated and also fully
 		// identifiable by space delimitation even with spaces in the process name
 		// (command name can contain spaces, therefore last)
 		.doShellScript(`ps ${sort}cAo 'pid=,ppid=,%cpu=,rss=,ruser=,command='`)
 		.split("\r")
-		.map((processInfo) => {
+		.reduce((/** @type {AlfredItem[]} */acc, processInfo) => {
 			// PID & name
 			const [pid, ppid, cpuStr, memoryStr, isRoot, ...rest] = processInfo.trim().split(/ +/);
 			const processName = rest.join(" ");
-			if (processName === "<defunct>") return {};
+			if (processName === "<defunct>") return acc;
 
 			// parent process
 			const parentInfo = parentProcs[ppid];
 			let parentName;
-			if (!parentInfo) {
-				parentName = app.doShellScript(`ps -p ${ppid} -co 'command=' || true`);
-				parentProcs[ppid] = { name: parentName, childrenCount: 1 };
-			} else {
+			if (parentInfo) {
 				parentName = parentInfo.name;
 				parentProcs[ppid].childrenCount++;
+			} else {
+				parentName = app.doShellScript(`ps -p ${ppid} -co 'command=' || true`);
+				parentProcs[ppid] = { name: parentName, childrenCount: 1 };
 			}
 			// don't display parent if the name is obvious
 			const parentIsObvious = processName.startsWith(parentName) || parentName === "launchd";
@@ -117,7 +121,8 @@ function run() {
 				icon = { type: "fileicon", path: path };
 			}
 
-			return {
+			/** @type {AlfredItem} */
+			const alfredItem = {
 				title: displayTitle + isRootUser,
 				subtitle: subtitle,
 				icon: icon,
@@ -133,15 +138,18 @@ function run() {
 						variables: { mode: "copy pid" },
 					},
 					shift: {
-						valid: isApp,
+						valid: Boolean(isApp),
 						subtitle: isApp ? "⇧: Restart App" : "⇧: ⛔ Not an app",
 						variables: { mode: "restart app" },
 					},
 				},
 			};
-		})
+			acc.push(alfredItem);
+			return acc;
+		}, [])
 		// 2nd iteration now knowing which processes are parents
 		.map((item) => {
+			if (!item.uid) return item;
 			const isParent = Object.keys(parentProcs).includes(item.uid);
 			if (isParent) {
 				const children = parentProcs[item.uid].childrenCount;
