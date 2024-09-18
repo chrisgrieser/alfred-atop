@@ -4,46 +4,12 @@ const app = Application.currentApplication();
 app.includeStandardAdditions = true;
 //──────────────────────────────────────────────────────────────────────────────
 
-// common apps where process name and app name are different
-/** @type {Record<string, string>} */
-const processAppName = {
-	// biome-ignore lint/style/useNamingConvention: usedAsDict
-	Alfred: "Alfred 5",
-	// biome-ignore lint/style/useNamingConvention: usedAsDict
-	CleanShot: "CleanShot X",
-	neovide: "Neovide",
-	espanso: "Espanso",
-	alacritty: "Alacritty",
-	"wezterm-gui": "WezTerm",
-	bird: "iCloud Sync",
-	"Steam Helper": "Steam",
-	// biome-ignore lint/style/useNamingConvention: usedAsDict
-	steam_osx: "Steam",
-	"Brave Browser Helper": "Brave Browser",
-	"Brave Browser Helper (Renderer)": "Brave Browser",
-	"Brave Browser Helper (GPU)": "Brave Browser",
-	"Discord Helper": "Discord",
-	"Discord Helper (Renderer)": "Discord",
-	"Discord Helper (GPU)": "Discord",
-	"Slack Helper": "Slack",
-	"Slack Helper (Renderer)": "Slack",
-	"Slack Helper (GPU)": "Slack",
-	"Obsidian Helper": "Obsidian",
-	"Obsidian Helper (Renderer)": "Obsidian",
-	"Obsidian Helper (GPU)": "Obsidian",
-};
-
-// common apps not located in /Applications/
-/** @type {Record<string, string>} */
-const appFilePaths = {
-	// biome-ignore lint/style/useNamingConvention: usedAsDict
-	Finder: "/System/Library/CoreServices/Finder.app",
-	"Alfred Preferences": "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app",
-};
-
-const separator = "    ";
-//──────────────────────────────────────────────────────────────────────────────
-
+/** @param {string} path */
+function readFile(path) {
+	const data = $.NSFileManager.defaultManager.contentsAtPath(path);
+	const str = $.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding);
+	return ObjC.unwrap(str);
+}
 
 /** @param {string} str */
 function camelCaseMatch(str) {
@@ -68,19 +34,25 @@ function run() {
 	/** @type {Record<string, { name: string; childrenCount: number }> } */
 	const parentProcs = {};
 
+	// common apps where process name and app name are different
+	/** @type {Record<string, Record<string, string>>} */
+	const { processAppName, appFilePaths } = JSON.parse(readFile("./scripts/app-process-info.json"));
+
 	const installedApps = app
 		.doShellScript("ls /Applications/")
 		.split("\r")
 		.filter((line) => line.endsWith(".app"));
 
+	// INFO command should come last, so it is not truncated and also fully
+	// identifiable by space delimitation even with spaces in the process name
+	// (command name can contain spaces, therefore last)
+	const shellCmd = `ps ${sort}cAo 'pid=,ppid=,%cpu=,rss=,ruser=,command='`;
+
 	/** @type {AlfredItem[]} */
 	const processes = app
-		// command should come last, so it is not truncated and also fully
-		// identifiable by space delimitation even with spaces in the process name
-		// (command name can contain spaces, therefore last)
-		.doShellScript(`ps ${sort}cAo 'pid=,ppid=,%cpu=,rss=,ruser=,command='`)
+		.doShellScript(shellCmd)
 		.split("\r")
-		.reduce((/** @type {AlfredItem[]} */acc, processInfo) => {
+		.reduce((/** @type {AlfredItem[]} */ acc, processInfo) => {
 			// PID & name
 			const [pid, ppid, cpuStr, memoryStr, isRoot, ...rest] = processInfo.trim().split(/ +/);
 			const processName = rest.join(" ");
@@ -113,7 +85,7 @@ function run() {
 				appName !== processName && !processName.includes("Helper")
 					? `${processName} [${appName}]`
 					: processName;
-			const subtitle = [memory, cpu, parentName].filter((t) => t !== "").join(separator);
+			const subtitle = [memory, cpu, parentName].filter((t) => t !== "").join("    ");
 			const isApp = installedApps.includes(`${appName}.app`) || appFilePaths[appName];
 			let icon = {};
 			if (isApp) {
@@ -153,7 +125,7 @@ function run() {
 			const isParent = Object.keys(parentProcs).includes(item.uid);
 			if (isParent) {
 				const children = parentProcs[item.uid].childrenCount;
-				item.subtitle = `${children}⇣` + separator + item.subtitle;
+				item.subtitle = `${children}⇣    ${item.subtitle}`;
 				item.match += " parent";
 			}
 			return item;
