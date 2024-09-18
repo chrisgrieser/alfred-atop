@@ -9,7 +9,8 @@ System monitoring and process management via Alfred.
 <img alt="atop overview showcase" width="70%" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/688059a7-7878-4928-9164-ee6f8eb43381">
 
 ## Features
-- Process management: CPU usage, memory usage, parent processes, and child processes.
+- Process management: CPU usage, memory usage, parent processes, and child
+  processes.
 - Bluetooth devices: connection status and battery information (if available)
 - Network connections
 - Removable volumes
@@ -33,8 +34,10 @@ directly access the more frequently used tools via a configurable keyword.
 Display processes directly via `top`. Append "parent" to the query to display
 only processes that have child processes.
 - <kbd>⏎</kbd>: Kill the process.
-- <kbd>⌘</kbd><kbd>⏎</kbd>: Force kill the process.
+- <kbd>⌘</kbd><kbd>⏎</kbd>: Force-kill the process.
 - <kbd>⌃</kbd><kbd>⏎</kbd>: Kill all processes with the same name.
+- <kbd>⌘</kbd><kbd>⌃</kbd><kbd>⏎</kbd>: Force-kill all processes with the same
+  name.
 - <kbd>⇧</kbd><kbd>⏎</kbd>: If the process belongs to a regular app, restart the
   app.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the Process Identifier (PID).

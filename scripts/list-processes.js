@@ -127,6 +127,7 @@ function run() {
 				mods: {
 					ctrl: { variables: { mode: "killall" } },
 					cmd: { variables: { mode: "force kill" } },
+					"cmd+ctrl": { variables: { mode: "force killall" } },
 					alt: {
 						subtitle: `⌥: Copy PID   ${pid}`,
 						variables: { mode: "copy pid" },
