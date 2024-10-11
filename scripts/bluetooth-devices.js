@@ -89,13 +89,16 @@ function run() {
 		const typeIcons = {
 			keyboard: "⌨️",
 			mouse: "🖱️",
-			appletrackpad: "🖲️",
+			"magic trackpad": "🖱️",
+			trackpad: "🖱️",
+			appletrackpad: "🖱️",
 			gamepad: "🎮",
 			headphones: "🎧",
 			headset: "🎧",
 		};
 		if (type) category = typeIcons[type.toLowerCase()];
 		else if (name.match(/tablet|ipad|phone/i)) category = "📱";
+		if (!category) category = ""; // no icon available
 
 		return {
 			title: `${name} ${category}`,
