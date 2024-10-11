@@ -88,10 +88,14 @@ function run() {
 		/** @type {Record<string, string>} */
 		const typeIcons = {
 			keyboard: "⌨️",
+			applekeyboard: "⌨️",
+			"magic keyboard": "⌨️",
 			mouse: "🖱️",
-			"magic trackpad": "🖱️",
+			applemouse: "🖱️",
+			"magic mouse": "🖱️",
 			trackpad: "🖱️",
 			appletrackpad: "🖱️",
+			"magic trackpad": "🖱️",
 			gamepad: "🎮",
 			headphones: "🎧",
 			headset: "🎧",
