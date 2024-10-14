@@ -1,8 +1,7 @@
-<!-- LTeX: enabled=false -->
-# atop
-<!-- LTeX: enabled=true -->
-![Download count](https://img.shields.io/github/downloads/chrisgrieser/alfred-atop/total?label=Total%20Downloads&style=plastic)
-![Latest release](https://img.shields.io/github/v/release/chrisgrieser/alfred-atop?label=Latest%20Release&style=plastic)
+# Alfred atop
+![GitHub Downloads](https://img.shields.io/github/downloads/chrisgrieser/alfred-atop/total?label=GitHub%20Downloads&style=plastic&logo=github)
+![Alfred Gallery Downloads](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fchrisgrieser%2F.config%2Frefs%2Fheads%2Fmain%2FAlfred.alfredpreferences%2Falfred-workflow-download-count.yaml&query=alfred-atop&style=plastic&logo=alfred&label=Gallery%20Downloads&color=%235C1F87)
+![Latest Release](https://img.shields.io/github/v/release/chrisgrieser/alfred-atop?label=Latest%20Release&style=plastic)
 
 System monitoring and process management via Alfred.
 
@@ -11,7 +10,7 @@ System monitoring and process management via Alfred.
 ## Features
 - Process management: CPU usage, memory usage, parent processes, and child
   processes.
-- Bluetooth devices: connection status and battery information (if available)
+- Bluetooth: device connection status and battery information (if available)
 - Network connections
 - Removable volumes
 - Uptime & reboots
