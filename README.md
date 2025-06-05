@@ -1,7 +1,7 @@
 # Alfred atop
-![GitHub Downloads](https://img.shields.io/github/downloads/chrisgrieser/alfred-atop/total?label=GitHub%20Downloads&style=plastic&logo=github)
-![Alfred Gallery Downloads](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fchrisgrieser%2F.config%2Frefs%2Fheads%2Fmain%2FAlfred.alfredpreferences%2Falfred-workflow-download-count.yaml&query=alfred-atop&style=plastic&logo=alfred&label=Gallery%20Downloads&color=%235C1F87)
-![Latest Release](https://img.shields.io/github/v/release/chrisgrieser/alfred-atop?label=Latest%20Release&style=plastic)
+![GitHub downloads](https://img.shields.io/github/downloads/chrisgrieser/alfred-atop/total?label=GitHub%20Downloads&style=plastic&logo=github)
+![Alfred Gallery downloads](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fchrisgrieser%2F.config%2Frefs%2Fheads%2Fmain%2FAlfred.alfredpreferences%2Falfred-workflow-download-count.yaml&query=alfred-atop&style=plastic&logo=alfred&label=Gallery%20Downloads&color=%235C1F87)
+![Latest release](https://img.shields.io/github/v/release/chrisgrieser/alfred-atop?label=Latest%20Release&style=plastic)
 
 System monitoring and process management via Alfred.
 
@@ -33,13 +33,14 @@ directly access the more frequently used tools via a configurable keyword.
 Display processes directly via `top`. Append "parent" to the query to display
 only processes that have child processes.
 - <kbd>⏎</kbd>: Kill the process.
-- <kbd>⌘</kbd><kbd>⏎</kbd>: Force-kill the process.
-- <kbd>⌃</kbd><kbd>⏎</kbd>: Kill all processes with the same name.
-- <kbd>⌘</kbd><kbd>⌃</kbd><kbd>⏎</kbd>: Force-kill all processes with the same
+- <kbd>⌘⏎</kbd>: Force-kill the process.
+- <kbd>⌃⏎</kbd>: Kill all processes with the same name.
+- <kbd>⌘⌃⏎</kbd>: Force-kill all processes with the same
   name.
-- <kbd>⇧</kbd><kbd>⏎</kbd>: If the process belongs to a regular app, restart the
+- <kbd>⇧⏎</kbd>: If the process belongs to a regular app, restart the
   app.
-- <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the Process Identifier (PID).
+- <kbd>⌘C</kbd>: Copy the process identifier (PID).
+- <kbd>⌥⏎</kbd>: Copy the process path.
 
 **Meaning of the icons**
 - `⭕`: process is owned by root.

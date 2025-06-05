@@ -546,7 +546,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>scripts/kill-action.sh</string>
+				<string>scripts/process-action.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -1329,13 +1329,14 @@ List all available tools via `atop` and select one. Alternatively, you can also 
 Display processes directly via `top`. Append "parent" to the query to display
 only processes that have child processes.
 - &lt;kbd&gt;⏎&lt;/kbd&gt;: Kill the process.
-- &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: Force-kill the process.
-- &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: Kill all processes with the same name.
-- &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: Force-kill all processes with the same
+- &lt;kbd&gt;⌘⏎&lt;/kbd&gt;: Force-kill the process.
+- &lt;kbd&gt;⌃⏎&lt;/kbd&gt;: Kill all processes with the same name.
+- &lt;kbd&gt;⌘⌃⏎&lt;/kbd&gt;: Force-kill all processes with the same
   name.
-- &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: If the process belongs to a regular app, restart the
+- &lt;kbd&gt;⇧⏎&lt;/kbd&gt;: If the process belongs to a regular app, restart the
   app.
-- &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: Copy the Process Identifier (PID).
+- &lt;kbd&gt;⌘C&lt;/kbd&gt;: Copy the process identifier (PID).
+- &lt;kbd&gt;⌥⏎&lt;/kbd&gt;: Copy the process path.
 
 **Meaning of the icons**
 - `⭕`: process is owned by root.
@@ -1550,7 +1551,7 @@ Display mounted volumes directly via `vol`.
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>note</key>
-			<string>copy pid</string>
+			<string>copy process path</string>
 			<key>xpos</key>
 			<real>635</real>
 			<key>ypos</key>
