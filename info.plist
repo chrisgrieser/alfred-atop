@@ -1741,7 +1741,7 @@ Display mounted volumes directly via `vol`.
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>CPU threshold, percentage below which CPU is not displayed</string>
+			<string>minimum CPU threshold in % for displaying usage</string>
 			<key>label</key>
 			<string></string>
 			<key>type</key>
@@ -1762,7 +1762,7 @@ Display mounted volumes directly via `vol`.
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>memory threshold, Mb below which memory usage is not displayed</string>
+			<string>minimum memory threshold in MB for displaying usage</string>
 			<key>label</key>
 			<string></string>
 			<key>type</key>
