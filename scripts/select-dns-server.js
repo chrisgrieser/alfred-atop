@@ -53,10 +53,10 @@ function run() {
 			variables: { server_name: "AdGuard" },
 		},
 		{
-			title: "Default",
+			title: "Other",
 			subtitle: "fetch dns from DHCP",
 			arg: ["", ""],
-			variables: { server_name: "Default" },
+			variables: { server_name: "Other" },
 		},
 	];
 
@@ -75,7 +75,7 @@ function run() {
 	else if (currentDns === "193.110.81.0") selectableDns[4].title = "✅ DNS0";
 	else if (currentDns === "9.9.9.9") selectableDns[5].title = "✅ quad9";
 	else if (currentDns === "94.140.14.14") selectableDns[6].title = "✅ AdGuard";
-	else selectableDns[7].title = "✅ Others"
+	else selectableDns[7].title = "✅ Other"
 
 	return JSON.stringify({ items: selectableDns });
 }
