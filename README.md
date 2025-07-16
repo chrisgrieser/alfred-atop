@@ -68,9 +68,9 @@ Display mounted volumes directly via `vol`.
 ### DNS Switching
 <img width="60%" alt="showcase DNS switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
 
-> If you choose "Other" option, it means: "Clears custom DNS settings and uses the DNS servers provided by your router/network automatically."
+If you choose "Other" option, it means: "Clears custom DNS settings and uses
+the DNS servers provided by your router/network automatically."
 
-<!-- vale Google.FirstPerson = NO -->
 ## About the developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
