@@ -54,7 +54,7 @@ function run() {
 		},
 		{
 			title: "Other",
-			subtitle: "fetch dns from DHCP",
+			subtitle: "Use router's DNS (automatic)",
 			arg: ["", ""],
 			variables: { server_name: "Other" },
 		},

@@ -1,7 +1,6 @@
 name: Alfred Workflow Release
 
 on:
-  workflow_dispatch:
   push:
     tags: ["*"]
 

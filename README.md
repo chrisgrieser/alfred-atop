@@ -62,11 +62,13 @@ Display mounted volumes directly via `vol`.
 - <kbd>⏎</kbd>: Open the Volume in Finder.
 - <kbd>⌘</kbd><kbd>⏎</kbd>: Browse the Volume in the Terminal, [using the
   Terminal app you have configured in your Alfred
-  preferences](https://www.alfredapp.com/help/features/terminal/).  
+  preferences](https://www.alfredapp.com/help/features/terminal/).
 - <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.
 
 ### DNS Switching
 <img width="60%" alt="showcase DNS switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
+
+> If you choose "Other" option, it means: "Clears custom DNS settings and uses the DNS servers provided by your router/network automatically."
 
 <!-- vale Google.FirstPerson = NO -->
 ## About the developer
