@@ -1260,7 +1260,7 @@ JSON.stringify({ 'items': volume_array });
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>{var:server_name}</string>
+				<string>{var:serverName}</string>
 				<key>title</key>
 				<string>✅ DNS server changed</string>
 			</dict>
