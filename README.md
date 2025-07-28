@@ -16,7 +16,7 @@ System monitoring and process management via Alfred.
 - Uptime & reboots
 - Speed-test of internet connection
 - DNS switching
-- All features are live refreshing.
+- *All features are live refreshing.*
 
 ## Installation
 [➡️ Download the latest release.](https://github.com/chrisgrieser/alfred-atop/releases/latest)
@@ -67,16 +67,13 @@ Display mounted volumes directly via `vol`.
 ### DNS Switching
 <img width="60%" alt="showcase DNS switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
 
-If you choose "Other" option, it means: "Clears custom DNS settings and uses
-the DNS servers provided by your router/network automatically."
-
 ## About the developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
-- [Academic Website](https://chris-grieser.de/)
+- [Website](https://chris-grieser.de/)
 - [Mastodon](https://pkm.social/@pseudometa)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
