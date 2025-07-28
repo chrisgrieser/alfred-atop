@@ -51,8 +51,7 @@ only processes that have child processes.
 <img width="60%" alt="showcase bluetooth devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
 Display paired Bluetooth devices directly via `blue`.
-- <kbd>⏎</kbd>: If `blueutil` is installed, toggle the connection state.
-  Otherwise, open the Bluetooth preferences.
+- <kbd>⏎</kbd>: Connect/Disconnect the selected device.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address.
 
 ### Removable Volumes

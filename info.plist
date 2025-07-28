@@ -1345,7 +1345,7 @@ only processes that have child processes.
 
 ### Bluetooth Devices
 Display paired Bluetooth devices directly via `blue`.
-- &lt;kbd&gt;⏎&lt;/kbd&gt;: If `blueutil` is installed, toggle the connection state. Otherwise, open the bluetooth preferences.
+- &lt;kbd&gt;⏎&lt;/kbd&gt;: Connect/Disconnect the selected device.
 - &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: Copy the device address.
 
 ### Removable Volumes
