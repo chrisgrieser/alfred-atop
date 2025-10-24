@@ -35,10 +35,9 @@ only processes that have child processes.
 - <kbd>⏎</kbd>: Kill the process.
 - <kbd>⌘⏎</kbd>: Force-kill the process.
 - <kbd>⌃⏎</kbd>: Kill all processes with the same name.
-- <kbd>⌘⌃⏎</kbd>: Force-kill all processes with the same
-  name.
-- <kbd>⇧⏎</kbd>: If the process belongs to a regular app, restart the
-  app.
+- <kbd>⌘⌃⏎</kbd>: Force-kill all processes with the same name.
+- <kbd>⇧⏎</kbd>: If the process belongs to a regular app, restart the app.
+- <kbd>fn⏎</kbd>: Toggle between sorting processes by memory or CPU.
 - <kbd>⌘C</kbd>: Copy the process identifier (PID).
 - <kbd>⌥⏎</kbd>: Copy the process path.
 
