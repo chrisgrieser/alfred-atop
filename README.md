@@ -41,7 +41,7 @@ only processes that have child processes.
 - <kbd>⌘C</kbd>: Copy the process identifier (PID).
 - <kbd>⌥⏎</kbd>: Copy the process path.
 
-**Meaning of the icons**
+**Meaning of the icons** <!-- rumdl-disable-line MD036 -->
 - `⭕`: process is owned by root.
 - `n⇣`: process is a parent of `n` child processes.
 - `↖ foobar`: process is a child of `foobar`.
