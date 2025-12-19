@@ -27,7 +27,7 @@ directly access the more frequently used tools via a configurable keyword.
 
 <img width="60%" alt="showcase overview" src="https://github.com/alfredapp/gallery-edits/assets/73286100/0ee2329e-45f8-4364-af47-70c06690932f">
 
-### Process Management
+### Process management
 <img width="60%" alt="showcase processes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/70304f1f-2856-4329-8d69-65c179bb3378">
 
 Display processes directly via `top`. Append "parent" to the query to display
@@ -46,14 +46,14 @@ only processes that have child processes.
 - `n⇣`: process is a parent of `n` child processes.
 - `↖ foobar`: process is a child of `foobar`.
 
-### Bluetooth Devices
+### Bluetooth devices
 <img width="60%" alt="showcase bluetooth devices" src="https://github.com/alfredapp/gallery-edits/assets/73286100/823a6e8d-0d89-43fe-bde7-20547841ca27">
 
 Display paired Bluetooth devices directly via `blue`.
 - <kbd>⏎</kbd>: Connect/Disconnect the selected device.
 - <kbd>⌥</kbd><kbd>⏎</kbd>: Copy the device address.
 
-### Removable Volumes
+### Removable volumes
 <img width="60%" alt="showcase rjectable volumes" src="https://github.com/alfredapp/gallery-edits/assets/73286100/8b115799-d02d-4116-8b4b-520db63ba454">
 
 Display mounted volumes directly via `vol`.
@@ -63,7 +63,7 @@ Display mounted volumes directly via `vol`.
   preferences](https://www.alfredapp.com/help/features/terminal/).
 - <kbd>⌃</kbd><kbd>⏎</kbd>: Eject the Volume.
 
-### DNS Switching
+### DNS switching
 <img width="60%" alt="showcase DNS switching" src="https://github.com/chrisgrieser/alfred-atop/assets/73286100/b4ba04bc-4f30-4e09-8eb9-081af24d6f84">
 
 ## About the developer
