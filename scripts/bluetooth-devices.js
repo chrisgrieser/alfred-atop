@@ -20,8 +20,9 @@ app.includeStandardAdditions = true;
 // biome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
 	// GUARD
-	const osVersion = $.NSProcessInfo.processInfo.operatingSystemVersion;
-	if (parseInt(osVersion.majorVersion) < 10 && parseInt(osVersion.minorVersion) < 15) {
+	const { majorVersion: major, minorVersion: minor } =
+		$.NSProcessInfo.processInfo.operatingSystemVersion;
+	if ((parseInt(major) === 10 && parseInt(minor) < 15) || parseInt(major) < 10) {
 		return JSON.stringify({
 			items: [{ title: "⛔ This feature requires at least macOS 10.15", valid: false }],
 		});
