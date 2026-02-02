@@ -44,13 +44,19 @@ function run() {
 	//───────────────────────────────────────────────────────────────────────────
 
 	// CAVEAT this only shows the battery for first-party Apple devices
-	const ioregOutput = app.doShellScript(
-		"ioreg -rak BatteryPercent | sed 's/data>/string>/' | plutil -convert json - -o -",
-	);
-
-	/** @type {Record<string, number>} */
 	let batteryInfo = {};
+	let ioregOutput = null;
+
 	try {
+		ioregOutput = app.doShellScript(
+			"ioreg -rak BatteryPercent | sed 's/data>/string>/' | plutil -convert json - -o -",
+		);
+	} catch (_error) {
+		console.log("`ioreg` output could not be parsed: " + ioregOutput);
+	}
+
+	if (ioregOutput) {
+		/** @type {Record<string, number>} */
 		batteryInfo = JSON.parse(ioregOutput).reduce(
 			(/** @type {any} */ acc, /** @type {any} */ device) => {
 				acc[device.DeviceAddress] = device.BatteryPercent;
@@ -58,8 +64,6 @@ function run() {
 			},
 			{},
 		);
-	} catch (_error) {
-		console.log("`ioreg` output could not be parsed: " + ioregOutput);
 	}
 
 	const excludedDevices = $.getenv("excluded_devices").split(/ *, */);
