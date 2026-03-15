@@ -4,14 +4,13 @@ const app = Application.currentApplication();
 app.includeStandardAdditions = true;
 //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
-
 // biome-ignore lint/correctness/noUnusedVariables: Alfred run
 function run() {
 	const dnsChoices = $.getenv("dns_choices")
 		.split("\n")
 		.map((line) => {
 			const [name, address1, address2] = line.trim().split(/\s*,\s*/);
+			if (!name || !address1 || !address2) return {};
 			return {
 				title: name,
 				subtitle: address1 + "  ▪  " + address2,
