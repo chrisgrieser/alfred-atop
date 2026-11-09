@@ -25,7 +25,7 @@ function run(argv) {
 	const device = devices.find((d) => d.addressString.js === selectedDeviceAddress);
 	if (!device) return "⚠️ Unknown error.";
 
-	const name = device.nameOrAddress.js;
+	const name = device.getDisplayName.js || device.nameOrAddress.js;
 	const wasConnected = device.isConnected;
 
 	if (wasConnected) {
