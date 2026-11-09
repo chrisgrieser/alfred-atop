@@ -7,6 +7,7 @@ app.includeStandardAdditions = true;
 
 // DOCS https://developer.apple.com/documentation/iobluetooth/iobluetoothdevice
 /** @typedef {Object} BluetoothDevice
+ * @property {{js?: string}} getDisplayName
  * @property {{js: string}} nameOrAddress
  * @property {boolean} isConnected
  * @property {{js: string}} addressString
@@ -69,7 +70,10 @@ function run() {
 
 	/** @type {AlfredItem[]} */
 	const deviceArr = devices.flatMap((device) => {
-		const name = device.nameOrAddress.js;
+		// Dual-mode devices (e.g. AirPods) attach a BLE `CBPeripheral` once connected,
+		// causing `nameOrAddress` to return the generic BLE GATT name ("AirPods Pro")
+		// instead of the user's Classic display name ("…’s AirPods Pro").
+		const name = device.getDisplayName.js || device.nameOrAddress.js;
 		if (excludedDevices.includes(name)) return [];
 
 		const connectedIcon = device.isConnected ? "🟢 " : "🔴 ";
